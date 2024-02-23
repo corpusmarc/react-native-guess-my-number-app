@@ -1,23 +1,30 @@
 import { StyleSheet } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import Background from "./src/components/background/Background";
 import StartScreen from "./src/screens/start-screen/StartScreen";
+import GameScreen from "./src/screens/game-screen/GameScreen";
 
 export default function App() {
   return (
-    <Background>
-      <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
-          <StartScreen />
-        </SafeAreaView>
-      </SafeAreaProvider>
-    </Background>
+    <>
+      <StatusBar style="light" />
+      <Background>
+        <SafeAreaProvider>
+          <SafeAreaView style={styles.container}>
+            {/* <StartScreen /> */}
+            <GameScreen />
+          </SafeAreaView>
+        </SafeAreaProvider>
+      </Background>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: 16,
   },
 });

@@ -8,7 +8,7 @@ import styles from "./StartScreen.style";
 export default function StartScreen() {
   return (
     <View style={styles.container}>
-      <Title text="Guess My" texthighlight="Number" />
+      <Title text="Guess My" textHighlight="Number" />
 
       <Card>
         <View style={styles.cardContent}>

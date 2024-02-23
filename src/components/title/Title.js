@@ -2,13 +2,18 @@ import { View, Text } from "react-native";
 
 import styles from "./Title.styles";
 
-export default function Title({ text, texthighlight }) {
+export default function Title({
+  text,
+  textHighlight,
+  containerStyle,
+  textStyle,
+}) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
+    <View style={[styles.container, containerStyle]}>
+      <Text style={[styles.text, textStyle]}>
         {text}
-        {texthighlight && (
-          <Text style={styles.texthighlight}>{` ${texthighlight}`}</Text>
+        {textHighlight && (
+          <Text style={styles.textHighlight}>{` ${textHighlight}`}</Text>
         )}
       </Text>
     </View>
