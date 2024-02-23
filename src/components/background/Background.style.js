@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   backgroundImage: {
-    opacity: 0.1,
+    opacity: 0.2,
   },
 });
 
