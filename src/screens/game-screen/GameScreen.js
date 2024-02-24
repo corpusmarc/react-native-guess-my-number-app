@@ -21,12 +21,6 @@ export default function GameScreen({
   const [min, setMin] = useState(1);
   const [max, setMax] = useState(99);
 
-  const generateRandomNumberHandler = () => {
-    const generatedRandomNumber = generateRandomNumber(min, max);
-    setGuess(generatedRandomNumber);
-    onGuess(generatedRandomNumber);
-  };
-
   const actionHandler = (action) => {
     if (
       (action === "-" && guess < input) ||
@@ -44,7 +38,9 @@ export default function GameScreen({
   };
 
   useEffect(() => {
-    generateRandomNumberHandler();
+    const generatedRandomNumber = generateRandomNumber(min, max);
+    setGuess(generatedRandomNumber);
+    onGuess(generatedRandomNumber);
   }, [min, max]);
 
   useEffect(() => {
