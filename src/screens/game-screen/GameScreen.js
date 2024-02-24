@@ -1,4 +1,5 @@
-import { View, FlatList } from "react-native";
+import { useState, useEffect } from "react";
+import { View, FlatList, Alert } from "react-native";
 
 import Title from "../../components/title/Title";
 import Card from "../../components/card/Card";
@@ -7,19 +8,58 @@ import Button from "../../components/button/Button";
 import Guess from "../../components/guess/Guess";
 import styles from "./GameScreen.style";
 
-export default function GameScreen() {
-  const guesses = [
-    { id: 3, guess: 28 },
-    { id: 2, guess: 84 },
-    { id: 1, guess: 56 },
-  ];
+const generateRandomNumber = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+
+let min = 1;
+let max = 99;
+
+export default function GameScreen({
+  input,
+  guesses,
+  onGuess,
+  onCorrectGuess,
+}) {
+  const [guess, setGuess] = useState(null);
+
+  const generateRandomNumberHandler = () => {
+    const generatedRandomNumber = generateRandomNumber(min, max);
+    setGuess(generatedRandomNumber);
+    onGuess(generatedRandomNumber);
+  };
+
+  const actionHandler = (action) => {
+    if (
+      (action === "-" && guess < input) ||
+      (action === "+" && guess > input)
+    ) {
+      Alert.alert("Don't lie!", "You know that is wrong.");
+      return;
+    }
+
+    if (action === "-") {
+      max = guess - 1;
+    } else if (action === "+") {
+      min = guess + 1;
+    }
+
+    generateRandomNumberHandler();
+  };
+
+  useEffect(() => {
+    generateRandomNumberHandler();
+  }, []);
+
+  useEffect(() => {
+    if (input === guess) onCorrectGuess();
+  }, [input, guess]);
 
   return (
     <View style={styles.container}>
       <Title text="Opponent's Guess" />
 
       <Title
-        text="57"
+        text={guess}
         containerStyle={styles.titleContainer}
         textStyle={styles.titleText}
       />
@@ -29,8 +69,16 @@ export default function GameScreen() {
           <InstructionText text="Higher or Lower?" />
 
           <View style={styles.buttonsContainer}>
-            <Button text="-" containerStyle={styles.button} />
-            <Button text="+" containerStyle={styles.button} />
+            <Button
+              text="-"
+              containerStyle={styles.button}
+              onPress={() => actionHandler("-")}
+            />
+            <Button
+              text="+"
+              containerStyle={styles.button}
+              onPress={() => actionHandler("+")}
+            />
           </View>
         </View>
       </Card>
