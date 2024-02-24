@@ -5,7 +5,7 @@ import Button from "../../components/button/Button";
 import styles from "./EndScreen.style";
 import success from "../../../assets/images/success.png";
 
-export default function EndScreen({ rounds, input, onRestart }) {
+export default function EndScreen({ rounds, input, onStartNewGame }) {
   return (
     <View style={styles.container}>
       <Title text="Game Over" />
@@ -19,7 +19,7 @@ export default function EndScreen({ rounds, input, onRestart }) {
         <Text style={styles.textHighlight}> {input}</Text>.
       </Text>
 
-      <Button text="Start New Game" onPress={onRestart} />
+      <Button text="Start New Game" onPress={onStartNewGame} />
     </View>
   );
 }

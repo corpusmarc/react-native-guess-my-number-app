@@ -31,7 +31,7 @@ export default function App() {
     setScreen("EndScreen");
   };
 
-  const restartHandler = () => {
+  const startNewGameHandler = () => {
     setScreen("StartScreen");
     setInput(null);
     setGuesses([]);
@@ -58,7 +58,7 @@ export default function App() {
         <EndScreen
           rounds={guesses.length}
           input={input}
-          onRestart={restartHandler}
+          onStartNewGame={startNewGameHandler}
         />
       )}
     </Wrapper>
