@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.yellow,
     borderBottomWidth: 2,
     fontSize: 32,
-    fontWeight: "bold",
+    fontFamily: "poppins-bold",
     color: colors.yellow,
     textAlign: "center",
     width: 50,

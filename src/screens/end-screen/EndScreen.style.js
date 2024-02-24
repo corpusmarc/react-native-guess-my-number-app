@@ -20,12 +20,13 @@ const styles = StyleSheet.create({
   text: {
     color: colors.white,
     fontSize: 20,
+    fontFamily: "poppins",
     textAlign: "center",
     lineHeight: 28,
   },
   textHighlight: {
     color: colors.yellow,
-    fontWeight: "bold",
+    fontFamily: "poppins-bold",
   },
 });
 

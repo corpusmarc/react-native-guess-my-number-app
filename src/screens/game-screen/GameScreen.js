@@ -20,7 +20,7 @@ export default function GameScreen() {
 
       <Title
         text="57"
-        containerStyle={style.titleContainer}
+        containerStyle={styles.titleContainer}
         textStyle={styles.titleText}
       />
 

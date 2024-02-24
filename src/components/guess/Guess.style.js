@@ -13,11 +13,12 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.lightgray,
-    fontSize: 18,
+    fontSize: 16,
+    fontFamily: "poppins",
   },
   textHighlight: {
     color: colors.yellow,
-    fontWeight: "bold",
+    fontFamily: "poppins-bold",
   },
 });
 

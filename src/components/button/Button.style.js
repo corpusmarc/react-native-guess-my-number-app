@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.black,
-    fontWeight: "bold",
     fontSize: 16,
+    fontFamily: "poppins-bold",
     textAlign: "center",
   },
   pressed: {

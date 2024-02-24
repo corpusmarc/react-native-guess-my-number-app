@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     borderColor: colors.yellow,
-    padding: 32,
   },
   titleText: {
     color: colors.yellow,
