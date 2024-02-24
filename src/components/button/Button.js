@@ -2,10 +2,11 @@ import { Pressable, Text } from "react-native";
 
 import styles from "./Button.style";
 
-export default function Button({ text, containerStyle, onPress }) {
+export default function Button({ text, containerStyle, disabled, onPress }) {
   return (
     <Pressable
       onPress={onPress}
+      disabled={disabled}
       style={({ pressed }) => [
         styles.container,
         containerStyle,

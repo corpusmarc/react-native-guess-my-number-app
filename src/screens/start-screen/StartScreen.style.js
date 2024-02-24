@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
   resetButton: {
     backgroundColor: colors.lightgray,
   },
+  disabledButton: {
+    backgroundColor: colors.lightgray,
+  },
 });
 
 export default styles;

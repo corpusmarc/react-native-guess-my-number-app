@@ -14,11 +14,19 @@ export default function App() {
   });
 
   const [screen, setScreen] = useState("StartScreen");
+  const [input, setInput] = useState(null);
+
+  const inputHandler = (value) => {
+    setInput(value);
+    setScreen("GameScreen");
+  };
 
   return (
     <Wrapper>
       {!fontsLoaded && <Loading />}
-      {fontsLoaded && screen === "StartScreen" && <StartScreen />}
+      {fontsLoaded && screen === "StartScreen" && (
+        <StartScreen onInput={inputHandler} />
+      )}
       {fontsLoaded && screen === "GameScreen" && <GameScreen />}
       {fontsLoaded && screen === "EndScreen" && <EndScreen />}
     </Wrapper>
