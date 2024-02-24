@@ -31,6 +31,12 @@ export default function App() {
     setScreen("EndScreen");
   };
 
+  const restartHandler = () => {
+    setScreen("StartScreen");
+    setInput(null);
+    setGuesses([]);
+  };
+
   return (
     <Wrapper>
       {!fontsLoaded && <Loading />}
@@ -48,7 +54,13 @@ export default function App() {
         />
       )}
 
-      {fontsLoaded && screen === "EndScreen" && <EndScreen />}
+      {fontsLoaded && screen === "EndScreen" && (
+        <EndScreen
+          rounds={guesses.length}
+          input={input}
+          onRestart={restartHandler}
+        />
+      )}
     </Wrapper>
   );
 }

@@ -11,9 +11,6 @@ import styles from "./GameScreen.style";
 const generateRandomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-let min = 1;
-let max = 99;
-
 export default function GameScreen({
   input,
   guesses,
@@ -21,6 +18,8 @@ export default function GameScreen({
   onCorrectGuess,
 }) {
   const [guess, setGuess] = useState(null);
+  const [min, setMin] = useState(1);
+  const [max, setMax] = useState(99);
 
   const generateRandomNumberHandler = () => {
     const generatedRandomNumber = generateRandomNumber(min, max);
@@ -38,17 +37,15 @@ export default function GameScreen({
     }
 
     if (action === "-") {
-      max = guess - 1;
+      setMax(guess - 1);
     } else if (action === "+") {
-      min = guess + 1;
+      setMin(guess + 1);
     }
-
-    generateRandomNumberHandler();
   };
 
   useEffect(() => {
     generateRandomNumberHandler();
-  }, []);
+  }, [min, max]);
 
   useEffect(() => {
     if (input === guess) onCorrectGuess();
