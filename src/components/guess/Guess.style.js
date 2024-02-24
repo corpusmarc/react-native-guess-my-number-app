@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   textHighlight: {
-    color: colors.white,
+    color: colors.yellow,
     fontWeight: "bold",
   },
 });

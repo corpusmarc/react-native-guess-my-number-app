@@ -13,7 +13,7 @@ export default function Title({
       <Text style={[styles.text, textStyle]}>
         {text}
         {textHighlight && (
-          <Text style={styles.textHighlight}>{` ${textHighlight}`}</Text>
+          <Text style={styles.textHighlight}>{textHighlight}</Text>
         )}
       </Text>
     </View>
