@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { StyleSheet } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 
-import Background from "./src/components/background/Background";
+import Wrapper from "./src/components/wrapper/Wrapper";
 import Loading from "./src/screens/loading/Loading";
 import StartScreen from "./src/screens/start-screen/StartScreen";
 import GameScreen from "./src/screens/game-screen/GameScreen";
@@ -19,25 +16,11 @@ export default function App() {
   const [screen, setScreen] = useState("StartScreen");
 
   return (
-    <>
-      <StatusBar style="light" />
-      <Background>
-        <SafeAreaProvider>
-          <SafeAreaView style={styles.container}>
-            {!fontsLoaded && <Loading />}
-            {fontsLoaded && screen === "StartScreen" && <StartScreen />}
-            {fontsLoaded && screen === "GameScreen" && <GameScreen />}
-            {fontsLoaded && screen === "EndScreen" && <EndScreen />}
-          </SafeAreaView>
-        </SafeAreaProvider>
-      </Background>
-    </>
+    <Wrapper>
+      {!fontsLoaded && <Loading />}
+      {fontsLoaded && screen === "StartScreen" && <StartScreen />}
+      {fontsLoaded && screen === "GameScreen" && <GameScreen />}
+      {fontsLoaded && screen === "EndScreen" && <EndScreen />}
+    </Wrapper>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 16,
-  },
-});
