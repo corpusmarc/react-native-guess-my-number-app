@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderWidth: 2,
     borderColor: colors.yellow,
-    borderRadius: 200,
+    borderRadius: 160,
     overflow: "hidden",
   },
   text: {

@@ -14,9 +14,9 @@ export default function App() {
       <Background>
         <SafeAreaProvider>
           <SafeAreaView style={styles.container}>
-            {/* <StartScreen /> */}
+            <StartScreen />
             {/* <GameScreen /> */}
-            <EndScreen />
+            {/* <EndScreen /> */}
           </SafeAreaView>
         </SafeAreaProvider>
       </Background>

@@ -7,17 +7,23 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 40,
   },
+  titleContainer: {
+    borderColor: colors.yellow,
+    padding: 32,
+  },
+  titleText: {
+    color: colors.yellow,
+  },
   cardContent: {
     alignItems: "center",
     gap: 28,
   },
-  label: {
-    color: colors.white,
-    fontSize: 24,
-  },
   buttonsContainer: {
     flexDirection: "row",
     gap: 12,
+  },
+  button: {
+    width: "40%",
   },
   guessesContainer: {
     flex: 1,

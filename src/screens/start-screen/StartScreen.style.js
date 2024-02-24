@@ -10,10 +10,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 28,
   },
-  label: {
-    color: colors.white,
-    fontSize: 24,
-  },
   textInput: {
     borderBottomColor: colors.yellow,
     borderBottomWidth: 2,
@@ -26,6 +22,12 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: "row",
     gap: 12,
+  },
+  button: {
+    width: "40%",
+  },
+  resetButton: {
+    backgroundColor: colors.lightgray,
   },
 });
 

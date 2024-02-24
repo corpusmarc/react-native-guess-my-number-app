@@ -1,11 +1,11 @@
-import { View, Text, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 
 import Title from "../../components/title/Title";
 import Card from "../../components/card/Card";
+import InstructionText from "../../components/instruction-text/InstructionText";
 import Button from "../../components/button/Button";
 import Guess from "../../components/guess/Guess";
 import styles from "./GameScreen.style";
-import colors from "../../constants/colors";
 
 export default function GameScreen() {
   const guesses = [
@@ -20,17 +20,17 @@ export default function GameScreen() {
 
       <Title
         text="57"
-        containerStyle={{ borderColor: colors.yellow, padding: 32 }}
-        textStyle={{ color: colors.yellow }}
+        containerStyle={style.titleContainer}
+        textStyle={styles.titleText}
       />
 
       <Card>
         <View style={styles.cardContent}>
-          <Text style={styles.label}>Higher or Lower?</Text>
+          <InstructionText text="Higher or Lower?" />
 
           <View style={styles.buttonsContainer}>
-            <Button text="-" containerStyle={{ width: "40%" }} />
-            <Button text="+" containerStyle={{ width: "40%" }} />
+            <Button text="-" containerStyle={styles.button} />
+            <Button text="+" containerStyle={styles.button} />
           </View>
         </View>
       </Card>
