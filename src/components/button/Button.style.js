@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     fontFamily: "poppins-bold",
     textAlign: "center",
   },
+  disabled: {
+    backgroundColor: colors.lightgray,
+  },
   pressed: {
     opacity: 0.9,
   },

@@ -56,10 +56,7 @@ export default function StartScreen({ onInput }) {
               onPress={confirmHandler}
               text="Confirm"
               disabled={disabledButton}
-              containerStyle={[
-                styles.button,
-                disabledButton && styles.disabledButton,
-              ]}
+              containerStyle={styles.button}
             />
           </View>
         </View>

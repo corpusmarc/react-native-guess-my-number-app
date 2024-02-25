@@ -9,6 +9,7 @@ export default function Button({ text, containerStyle, disabled, onPress }) {
       disabled={disabled}
       style={({ pressed }) => [
         styles.container,
+        disabled && styles.disabled,
         containerStyle,
         pressed && styles.pressed,
       ]}
